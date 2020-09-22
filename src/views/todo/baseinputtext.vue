@@ -28,12 +28,12 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
 --vue-blue: #32485F;
 --vue-green: #00C185;
 
 .input {
-  width: 100%;
+  width: 200px;
   padding: 8px 10px;
   border: 1px solid var(--vue-blue);
 }

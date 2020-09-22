@@ -10,17 +10,18 @@ module.exports = {
     mode: 'production',
     devtool: 'cheap-module-eval-source-map',
     output: {
-        filename: 'bundle.js',
-        path: path.join(__dirname, 'dist')
+        filename: '[name].bundle.js',
+        path: path.join(__dirname, '../dist'),
+        publicPath: '/',
     },
     module: {
         rules: [
             {
-                test: /.vue$/,
+                test: /\.vue$/,
                 loader: 'vue-loader'
             },
             {
-                test: /.js$/,
+                test: /\.js$/,
                 loader:"babel-loader",
                 exclude: /node_modules/
             },
@@ -35,8 +36,14 @@ module.exports = {
                test: /\.css$/,
                exclude: /node_modules/,
                use: [
-                   "style-loader",
-                   "css-loader",
+                   MiniCssExtractPlugin.loader,
+                   {
+                     loader: 'css-loader',
+                     options: {
+                       modules: true,
+                       importLoaders: 1
+                     }
+                   },
                    "postcss-loader"
                  ]
            }
@@ -62,12 +69,13 @@ module.exports = {
         // 默认路径代理
         // 例如 import Vue from 'vue'，会自动到 'vue/dist/vue.common.js'中寻找
         // 这样可以使之后在开发项目的时候, 引用文件时不必关注不同层级的问题
-        // alias: {
-        //     '@': path.join(__dirname, './', 'src'),
-        //     '@api': path.join(__dirname, './', 'src/api'),
-        //     '@styles': path.join(__dirname, './', 'src/styles'),
-        //     '@components':path.join(__dirname, './', 'src/components')
-        // }
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js', //内部为正则表达式  vue结尾的
+            // '@': path.join(__dirname, './', 'src'),
+            // '@api': path.join(__dirname, './', 'src/api'),
+            // '@styles': path.join(__dirname, './', 'src/styles'),
+            // '@components':path.join(__dirname, './', 'src/components')
+        }
     },
     optimization: {
        splitChunks: {
