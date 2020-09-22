@@ -21,10 +21,7 @@ module.exports = {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader',
-                options: {
-                   hotReload: true
-                }
+                loader: 'vue-loader'
             },
             {
                 test: /\.js$/,
@@ -42,7 +39,7 @@ module.exports = {
               test: /\.css$/,
               exclude: /node_modules/,
               use: [
-                  "vue-style-loader",
+                  "style-loader",
                   {
                     loader: 'css-loader',
                     options: {

@@ -9,7 +9,8 @@ module.exports = {
           proposals: true
         },
         useBuiltIns:"usage"
-    }]
+    }],
+    ["@vue/babel-preset-jsx"]
   ],
   plugins : [
      ["@babel/plugin-transform-runtime",{

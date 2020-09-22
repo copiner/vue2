@@ -13,8 +13,8 @@
 	margin: 0 auto;
 	line-height: 1.4;
 	font-family: 'Avenir', Helvetica, Arial, sans-serif;
-	color: var(--vue-blue);
 	background: #ccc;
+	color:var(--vue-blue)
 }
 
 h1 {

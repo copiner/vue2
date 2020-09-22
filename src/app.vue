@@ -3,7 +3,9 @@
 <template>
     <div id="app">
       <!--这个元素及其子元素会把index.html里的#app替换掉 -->
-      <router-link to="/">Login</router-link>
+      <router-link to="/">home</router-link>
+      <router-link to="/pont">pont</router-link>
+      <router-link to="/login">Login</router-link>
       <router-link to="/pwd">Pwd</router-link>
       <router-link to="/todo">Todo</router-link>
       <router-view>
