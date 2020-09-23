@@ -1,19 +1,21 @@
 
-/* --vue-blue: #32485F;
---vue-green: #00C185; */
 
-/* *,
+
+*,
 *::before,
 *::after {
 	box-sizing: border-box;
-} */
+}
 
 .todo {
+	--vue-blue: #32485F;
+	--vue-green: #00C185;
+	
 	width: 400px;
 	margin: 0 auto;
 	background: #ccc;
 	border: 1px solid red;
-	/* color:var(--vue-blue) */
+	color: var(--vue-blue)
 }
 
 .title {
