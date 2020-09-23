@@ -1,6 +1,6 @@
 <template>
 	<div class="todo">
-		<h1>My Todo App!</h1>
+		<h1 class="title">My Todo App!</h1>
 		<TodoList/>
 	</div>
 </template>
@@ -14,5 +14,4 @@ export default {
 	}
 }
 </script>
-
-<style src="./todo.css"></style>
+<style scoped src="./todo.css"></style>

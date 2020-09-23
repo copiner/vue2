@@ -58,8 +58,8 @@ module.exports = {
           favicon: "./public/favicon.ico"
         }),
         new MiniCssExtractPlugin({
-          filename: "css/[name][chunkhash].css",
-          chunkFilename: "css/[id][chunkhash].css"
+          filename: "[name][chunkhash].css",
+          chunkFilename: "[id][chunkhash].css"
         }),
         new CleanWebpackPlugin()
     ],

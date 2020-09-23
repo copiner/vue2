@@ -1,22 +1,21 @@
 
---vue-blue: #32485F;
---vue-green: #00C185;
+/* --vue-blue: #32485F;
+--vue-green: #00C185; */
 
-*,
+/* *,
 *::before,
 *::after {
 	box-sizing: border-box;
-}
+} */
 
 .todo {
-	max-width: 400px;
+	width: 400px;
 	margin: 0 auto;
-	line-height: 1.4;
-	font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	background: #ccc;
-	color:var(--vue-blue)
+	border: 1px solid red;
+	/* color:var(--vue-blue) */
 }
 
-h1 {
+.title {
 	text-align: center;
 }
