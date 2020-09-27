@@ -10,11 +10,11 @@
 .todo {
 	--vue-blue: #32485F;
 	--vue-green: #00C185;
-	
+
 	width: 400px;
 	margin: 0 auto;
+	padding: 6px;
 	background: #ccc;
-	border: 1px solid red;
 	color: var(--vue-blue)
 }
 

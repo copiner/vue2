@@ -1,27 +1,49 @@
 
-
 <template>
     <div id="app">
-      <!--这个元素及其子元素会把index.html里的#app替换掉 -->
-      <router-link to="/">home</router-link>
-      <router-link to="/pont">pont</router-link>
-      <router-link to="/bel">bel</router-link>
-      <router-link to="/login">Login</router-link>
-      <router-link to="/pwd">Pwd</router-link>
-      <router-link to="/todo">Todo</router-link>
+      <h1>{{title}}</h1>
+
+      <router-item
+        v-for="item in baserouter"
+        v-bind:route="item"
+        v-bind:key="item.id"
+      ></router-item>
+
+
       <router-view>
       <!--路由匹配的组件-->
       </router-view>
     </div>
 </template>
 <script>
-    export default {
-        name: 'App',
-        data () {
-            return {}
+import { routes } from './router'
+
+import Vue from 'vue'
+
+Vue.component('router-item', {
+  props: ['route'],
+  template: `
+    <router-link class="homeLink" v-bind:to=route.path>{{ route.title }}</router-link>
+  `
+})
+
+export default {
+    name: 'App',
+    data () {
+        return {
+          title:"VUE",
+          baserouter:routes
         }
-    }
+    },
+    created: function () {
+      console.log(this.$route)
+      console.log(this.baserouter)
+    },
+}
 </script>
 
-<style>
+<style scoped lang="css">
+  .homeLink{
+    padding:5px;
+  }
 </style>

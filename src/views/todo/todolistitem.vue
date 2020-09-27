@@ -17,3 +17,14 @@ export default {
   }
 }
 </script>
+<style scoped lang="css">
+
+li{
+  line-height:28px;
+}
+
+button {
+  
+  border: none;
+}
+</style>

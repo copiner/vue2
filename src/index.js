@@ -4,11 +4,11 @@ import Vue from 'vue'
 import App from './app.vue'
 
 import VueRouter from 'vue-router'
-import router from './router'
+import { router } from './router'
 
 Vue.use(VueRouter)
 
-
+console.log("service at ", SERVICE_URL)
 new Vue({
     router,
     render: (h) => h(App)

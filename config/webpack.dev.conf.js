@@ -1,6 +1,6 @@
-// webpack.config.js
+
 const path = require('path')
-const webpack = require('webpack');
+const Webpack = require('webpack');
 
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -53,6 +53,9 @@ module.exports = {
         ]
     },
     plugins:[
+        new Webpack.DefinePlugin({
+         'SERVICE_URL': JSON.stringify("api")
+        }),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
           title: 'vued',
@@ -62,7 +65,7 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         // new webpack.NamedModulesPlugin(),
-        // new webpack.HotModuleReplacementPlugin()
+        new Webpack.HotModuleReplacementPlugin()
     ],
     resolve: {
         alias: {
