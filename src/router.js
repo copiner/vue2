@@ -7,73 +7,132 @@ const pont = () => import('./views/home/pont.vue')
 const bel = () => import('./views/home/bel.vue')
 const login = () => import('./views/login/login.vue')
 const findPwd = () => import('./views/login/pwd.vue')
-const toDo = () => import('./views/todo/todo.vue')
+const toDo = () => import(/* webpackChunkName: "toDo" */'./views/todo/todo.vue')
 
 const action = () => import('./views/home/action.vue')
 const form = () => import('./views/home/form.vue')
+
+const user = () => import('./views/vuerouter/user.vue')
+const one = () => import('./views/vuerouter/one.vue')
+const posts = () => import('./views/vuerouter/posts.vue')
+const profile = () => import('./views/vuerouter/profile.vue')
+const comments = () => import('./views/vuerouter/comments.vue')
+
+const vx = () => import('./views/vuex/vx.vue')
 
 const routes = [
 {
   id:1,
   path: '/',
   component: home,
-  title:"home",
-  name: '首页'
+  name:"home",
+  title: '首页'
 },
 {
   id:2,
   path: '/pont',
   component: pont,
-  title:"pont",
-  name: '组件'
+  name:"pont",
+  title: '组件'
 },
 {
   id:3,
   path: '/bel',
   component: bel,
-  title:"bel",
-  name: '渲染'
+  name:"bel",
+  title: '渲染'
 },
 {
   id:4,
   path: '/login',
   component: login,
-  title:"login",
-  name: '用户登陆'
+  name:"login",
+  title: '用户登陆'
 },
 {
   id:5,
   path: '/pwd',
   component: findPwd,
-  title:"pwd",
-  name: '找回密码'
+  name:"pwd",
+  title: '找回密码'
 },
 {
   id:6,
   path: '/todo',
   component: toDo,
-  title:"todo",
-  name: '记事本'
+  name:"todo",
+  title: '记事本'
 },
 {
   id:7,
   path: '/action',
   component: action,
-  title:"action",
-  name: '事件'
+  name:"action",
+  title: '事件'
 },
 {
   id:8,
   path: '/form',
   component: form,
-  title:"form",
-  name: '表单'
-}
+  name:"form",
+  title: '表单'
+},
+{
+  id:9,
+  path: '/user/:id',
+  component: user,
+  // name:"user",
+  props: true,
+  title: '用户',
+  children: [
+    {
+      path: '',
+      component: one
+    },
+   {
+     path: 'profile',
+     component: profile
+   },
+   {
+     path: 'posts',
+     component: posts
+   }
+ ]
+},
+{
+  id:10,
+  path: '/comments/:id',
+  component: comments,
+  props: true,
+  // name:"comments",
+  title: '评论',
+  beforeEnter: (to, from, next) => {
+    // ...
+  }
+},
+{
+  id:11,
+  path: '/vx',
+  component: vx,
+  props: true,
+  name:"vx",
+  title: '状态'
+},
+
 ]
 
 let router = new Router({
+  mode: 'history',
   routes
 })
+
+// router.beforeEach((to, from, next) => {
+//   // ...
+// })
+//
+// router.afterEach((to, from) => {
+//   // ...
+// })
 
 export {
   routes,

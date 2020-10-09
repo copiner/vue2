@@ -37,7 +37,7 @@ export default {
     },
     created: function () {
       console.log(this.$route)
-      console.log(this.baserouter)
+      console.log(this.$router)
     },
 }
 </script>
