@@ -10,7 +10,9 @@ import Vuex from 'vuex'
 Vue.use(VueRouter)
 Vue.use(Vuex)
 
-
+//最好提前在你的 store 中初始化好所有所需属性
+// Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、mutation、action、getter、
+// 甚至是嵌套子模块——从上至下进行同样方式的分割
 const store = new Vuex.Store({
   state: {
     count: 0,
@@ -20,8 +22,27 @@ const store = new Vuex.Store({
     ]
   },
   mutations: {
-    increment (state) {
-      state.count++
+    increment (state, payload) {
+       state.count += payload.amount
+    },
+    decrement (state, payload) {
+       state.count -= payload.amount
+    },
+    incrementonebyone (state) {
+       state.count++
+    },
+  },
+  actions: {
+    increment (context) {
+      context.commit('increment')
+    },
+    increment ({ commit }) {
+      commit('increment')
+    },
+    incrementAsync ({commit},payload) {
+      setTimeout(() => {
+        commit({...payload, type: 'increment'})
+      }, 1000)
     }
   },
   getters: {
