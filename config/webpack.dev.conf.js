@@ -9,7 +9,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 let url = "";
 
 module.exports = {
-    entry:  path.join(__dirname, '../src/index.js'),
+    //entry:  path.join(__dirname, '../src/index.js'),
+    entry:  path.join(__dirname, '../src/cart/app.js'),
     mode: 'development',
     devtool: 'eval-source-map',
     output: {
@@ -54,7 +55,7 @@ module.exports = {
     },
     plugins:[
         new Webpack.DefinePlugin({
-         'SERVICE_URL': JSON.stringify("api")
+         'SERVICE_URL': JSON.stringify("http://127.0.0.1:8000/api")
         }),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
@@ -65,7 +66,8 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         // new webpack.NamedModulesPlugin(),
-        new Webpack.HotModuleReplacementPlugin()
+        new Webpack.HotModuleReplacementPlugin(),
+        new Webpack.NoEmitOnErrorsPlugin()
     ],
     resolve: {
         alias: {
