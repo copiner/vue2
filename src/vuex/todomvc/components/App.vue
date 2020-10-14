@@ -8,39 +8,41 @@
         autofocus
         autocomplete="off"
         placeholder="What needs to be done?"
-        @keyup.enter="addTodo">
+        v-on:keyup.enter="addTodo">
     </header>
     <!-- main section -->
     <section class="main" v-show="todos.length">
       <input class="toggle-all" id="toggle-all"
         type="checkbox"
-        :checked="allChecked"
-        @change="toggleAll(!allChecked)">
+        v-bind:checked="allChecked"
+        v-on:change="toggleAll(!allChecked)">
       <label for="toggle-all">all</label>
       <ul class="todo-list">
         <TodoItem
           v-for="(todo, index) in filteredTodos"
-          :key="index"
-          :todo="todo"
+          v-bind:key="index"
+          v-bind:todo="todo"
         />
       </ul>
     </section>
     <!-- footer -->
-    <footer class="footer" v-show="todos.length">
-      <span class="todo-count">
+    <footer v-show="todos.length">
+      <span>
         <strong>{{ remaining }}</strong>
         {{ remaining | pluralize('item') }} left
       </span>
-      <ul class="filters">
+
+      <ul>
         <li v-for="(val, key) in filters">
-          <a :href="'#/' + key"
-            :class="{ selected: visibility === key }"
-            @click="visibility = key">{{ key | capitalize }}</a>
+          <a v-bind:href="'#/' + key"
+            v-on:click="visibility = key">
+            {{ key | capitalize }}
+          </a>
         </li>
       </ul>
       <button class="clear-completed"
         v-show="todos.length > remaining"
-        @click="clearCompleted">
+        v-on:click="clearCompleted">
         Clear completed
       </button>
     </footer>
@@ -65,7 +67,7 @@ export default {
       filters: filters
     }
   },
-  computed: {
+  computed: {//对于任何复杂逻辑，你都应当使用计算属性
     todos () {
       return this.$store.state.todos
     },
