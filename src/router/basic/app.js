@@ -63,7 +63,7 @@ router.beforeEach((to, from, next) => {
 // 4. Create and mount root instance.
 // Make sure to inject the router.
 // Route components will be rendered inside <router-view>.
-const vueInstance = new Vue({
+new Vue({
   router,
   data: () => ({ n: 0 }),
   template: `
@@ -89,7 +89,7 @@ const vueInstance = new Vue({
         <li><router-link to="/?delay=200">/ (delay of 500ms)</router-link></li>
         <li><router-link to="/foo?delay=200">/foo (delay of 500ms)</router-link></li>
       </ul>
-      <button id="navigate-btn" @click="navigateAndIncrement">On Success</button>
+      <button v-on:click="navigateAndIncrement">On Success</button>
       <pre id="counter">{{ n }}</pre>
       <pre id="query-t">{{ $route.query.t }}</pre>
       <pre id="hash">{{ $route.hash }}</pre>
@@ -108,8 +108,3 @@ const vueInstance = new Vue({
     }
   }
 }).$mount('#app')
-
-document.getElementById('unmount').addEventListener('click', () => {
-  vueInstance.$destroy()
-  vueInstance.$el.innerHTML = ''
-})
