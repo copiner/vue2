@@ -10,6 +10,7 @@ import Dashboard from './components/Dashboard.vue'
 import Login from './components/Login.vue'
 
 function requireAuth (to, from, next) {
+  //console.log(to)
   if (!auth.loggedIn()) {
     next({
       path: '/login',
@@ -39,7 +40,7 @@ const router = new VueRouter({
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
+  router,//通过注入路由器，我们可以在任何组件内通过 this.$router 访问路由器，也可以通过 this.$route 访问当前路由
   // replace the content of <div id="app"></div> with App
   render: h => h(App)
 })

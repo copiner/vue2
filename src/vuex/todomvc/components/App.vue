@@ -74,7 +74,7 @@ export default {
     allChecked () {
       return this.todos.every(todo => todo.done)
     },
-    filteredTodos () {
+    filteredTodos () {//computed
       return filters[this.visibility](this.todos)
     },
     remaining () {

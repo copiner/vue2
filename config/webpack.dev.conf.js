@@ -10,7 +10,7 @@ let url = "";
 
 module.exports = {
     //entry:  path.join(__dirname, '../src/index.js'),
-    entry:  path.join(__dirname, '../src/vuex/todomvc/app.js'),
+    entry:  path.join(__dirname, '../src/router/auth-flow/app.js'),
     mode: 'development',
     devtool: 'eval-source-map',
     output: {
