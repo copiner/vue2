@@ -9,7 +9,7 @@
         giving the post container a unique key triggers transitions
         when the post id changes.
       -->
-      <div v-if="post" class="content" :key="post.id">
+      <div v-if="post" class="content" v-bind:key="post.id">
         <h2>{{ post.title }}</h2>
         <p>{{ post.body }}</p>
       </div>

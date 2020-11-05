@@ -10,7 +10,7 @@ import Dashboard from './components/Dashboard.vue'
 import Login from './components/Login.vue'
 
 function requireAuth (to, from, next) {
-  //console.log(to)
+  console.log(to)
   if (!auth.loggedIn()) {
     next({
       path: '/login',

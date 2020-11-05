@@ -179,6 +179,7 @@ const router = new VueRouter({
   ]
 })
 
+//可以使用 router.beforeEach 注册一个全局前置守卫
 router.beforeEach((to, from, next) => {
   if (to.matched.some(m => m.meta.needGuard)) {
     guardRoute(to, from, next)

@@ -34,7 +34,8 @@ export default {
     return !!localStorage.token
   },
 
-  onChange () {}
+  onChange () {
+  }
 }
 
 function pretendRequest (email, pass, cb) {
