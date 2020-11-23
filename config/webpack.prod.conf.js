@@ -6,6 +6,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const env = require('./prod');
 
 module.exports = {
     entry:  path.join(__dirname, '../src/index.js'),
@@ -53,7 +54,8 @@ module.exports = {
     },
     plugins:[
         new Webpack.DefinePlugin({
-         'SERVICE_URL': JSON.stringify("api")
+         // 'SERVICE_URL': JSON.stringify("api"),
+         'process.env': env
         }),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({

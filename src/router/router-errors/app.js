@@ -12,6 +12,7 @@ const component = {
 Vue.use(VueRouter)
 
 const router = new VueRouter({
+  mode: 'history',
   routes: [
     { path: '/', component }, { path: '/foo', component }
   ]
@@ -20,6 +21,7 @@ const router = new VueRouter({
 window.router = router
 
 router.beforeEach((to, from, next) => {
+
   console.log('from', from.fullPath)
   console.log('going to', to.fullPath)
   if (to.query.wait) {
@@ -35,12 +37,22 @@ router.beforeEach((to, from, next) => {
 
 new Vue({
   el: '#app',
-  router
+  router,
+  template: `
+  <div id="app">
+    <router-link to="/">/</router-link>
+    <br/>
+    <router-link to="/foo">/foo</router-link>
+    <router-view></router-view>
+  </div>
+  `
 })
+//.$mount('#app')
 
 // 4 NAVIGATION ERROR CASES :
 
 // navigation duplicated
+
 // router.push('/foo')
 // router.push('/foo')
 
@@ -49,7 +61,7 @@ new Vue({
 // router.push('/')
 
 // navigation redirected
-// router.push('/foo?redirect=/')
+//router.push('/foo?redirect=/')
 
 // navigation aborted
-// router.push('/foo?abort=y')
+//router.push('/foo?abort=y')

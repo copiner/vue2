@@ -5,12 +5,14 @@ const Webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const env = require('./dev');
+
 
 let url = "";
 
 module.exports = {
     //entry:  path.join(__dirname, '../src/index.js'),
-    entry:  path.join(__dirname, '../src/router/nested-router/app.js'),
+    entry:  path.join(__dirname, '../src/router/restart-app/app.js'),
     mode: 'development',
     devtool: 'eval-source-map',
     output: {
@@ -55,7 +57,8 @@ module.exports = {
     },
     plugins:[
         new Webpack.DefinePlugin({
-         'SERVICE_URL': JSON.stringify("http://127.0.0.1:8000/api")
+         // 'SERVICE_URL': JSON.stringify("http://127.0.0.1:8000/api"),
+         'process.env': env
         }),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({

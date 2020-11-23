@@ -15,6 +15,26 @@ const router = new VueRouter({
   routes
 })
 
+Vue.use(VueRouter)
+
+new Vue({
+  router,
+  template: `
+    <div id="root">
+    <button id="mount">mount</button>
+    <button id="unmount">unmount</button>
+
+    <hr />
+
+    Count beforeEach: <span id="beforeEach"></span><br />
+    Count beforeResolve: <span id="beforeResolve"></span><br />
+    Count afterEach: <span id="afterEach"></span><br />
+
+    <hr />
+    </div>
+  `
+}).$mount('#root')
+
 // track number of beforeResolve
 const increment = name => {
   const counter = document.getElementById(name)
@@ -38,7 +58,8 @@ router.afterEach((to, from) => {
   increment('afterEach')
 })
 
-Vue.use(VueRouter)
+
+
 
 let vueInstance
 const mountEl = document.getElementById('mount')

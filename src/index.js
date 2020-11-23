@@ -52,7 +52,7 @@ const store = new Vuex.Store({
   }
 })
 
-console.log("service at ", SERVICE_URL)
+console.log("service at ", process.env.BASE_API_GM)
 new Vue({
     router,
     store,

@@ -11,7 +11,7 @@ const Logs = {
   template: `
     <div>
       <pre id="params">{{ to.params }}</pre>
-      <router-link :to="to" class="child-link">{{ to.params.type }}</router-link>
+      <router-link v-bind:to="to" class="child-link">{{ to.params.type }}</router-link>
       <router-view></router-view>
     </div>
   `,
@@ -35,7 +35,7 @@ const router = new VueRouter({
       children: [
         {
           path: ':type',
-          name: 'items.logs.type',
+          name: 'items.logs.type',//named-routes
           component: Log
         }
       ]
