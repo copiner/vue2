@@ -7,12 +7,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const env = require('./dev');
 
-
-let url = "";
-
 module.exports = {
-    //entry:  path.join(__dirname, '../src/index.js'),
-    entry:  path.join(__dirname, '../src/router/restart-app/app.js'),
+    entry:  path.join(__dirname, '../src/index.js'),
+    //entry:  path.join(__dirname, '../src/router/restart-app/app.js'),
     mode: 'development',
     devtool: 'eval-source-map',
     output: {
@@ -82,10 +79,10 @@ module.exports = {
        publicPath: '/',
        historyApiFallback: true,
        host:"127.0.0.1",
-       port: 8000,
+       port: 9000,
        proxy: {
           '/api': {
-            target: url,
+            target: env.BASE_API,
             pathRewrite: {'^/api' : ''}
           }
         }

@@ -2,23 +2,23 @@
 import Router from 'vue-router'
 
 // 懒加载，需要webpack里的插件dynamic-import-webpack配置动态import，以后的es几也会写入
-const home = () => import('./views/home/home.vue')
-const pont = () => import('./views/home/pont.vue')
-const bel = () => import('./views/home/bel.vue')
-const login = () => import('./views/login/login.vue')
-const findPwd = () => import('./views/login/pwd.vue')
-const toDo = () => import(/* webpackChunkName: "toDo" */'./views/todo/todo.vue')
+const home = () => import('./base/home/home.vue')
+const pont = () => import('./base/home/pont.vue')
+const bel = () => import('./base/home/bel.vue')
+const login = () => import('./base/login/login.vue')
+const findPwd = () => import('./base/login/pwd.vue')
+const toDo = () => import(/* webpackChunkName: "toDo" */'./base/todo/todo.vue')
 
-const action = () => import('./views/home/action.vue')
-const form = () => import('./views/home/form.vue')
+const action = () => import('./base/home/action.vue')
+const form = () => import('./base/home/form.vue')
 
-const user = () => import('./views/vuerouter/user.vue')
-const one = () => import('./views/vuerouter/one.vue')
-const posts = () => import('./views/vuerouter/posts.vue')
-const profile = () => import('./views/vuerouter/profile.vue')
-const comments = () => import('./views/vuerouter/comments.vue')
+const user = () => import('./base/vuerouter/user.vue')
+const one = () => import('./base/vuerouter/one.vue')
+const posts = () => import('./base/vuerouter/posts.vue')
+const profile = () => import('./base/vuerouter/profile.vue')
+const comments = () => import('./base/vuerouter/comments.vue')
 
-const vx = () => import('./views/vuex/vx.vue')
+const vx = () => import('./base/vuex/vx.vue')
 
 const routes = [
 {
