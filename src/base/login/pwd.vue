@@ -1,7 +1,9 @@
 <template>
     <div>
       {{pwd}}
+      <Item />
     </div>
+
 </template>
 <script>
 

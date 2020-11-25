@@ -4,7 +4,7 @@
       <h1>{{title}}</h1>
 
       <router-item
-        v-for="item in baserouter"
+        v-for="item in baseroutes"
         v-bind:route="item"
         v-bind:key="item.id"
       ></router-item>
@@ -32,7 +32,7 @@ export default {
     data () {
         return {
           title:"VUE",
-          baserouter:routes
+          baseroutes:routes
         }
     },
     created: function () {

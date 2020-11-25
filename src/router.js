@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 // 懒加载，需要webpack里的插件dynamic-import-webpack配置动态import，以后的es几也会写入
 const home = () => import('./base/home/home.vue')
-const pont = () => import('./base/home/pont.vue')
+const prop = () => import('./base/home/prop.vue')
 const bel = () => import('./base/home/bel.vue')
 const login = () => import('./base/login/login.vue')
 const findPwd = () => import('./base/login/pwd.vue')
@@ -30,10 +30,10 @@ const routes = [
 },
 {
   id:2,
-  path: '/pont',
-  component: pont,
-  name:"pont",
-  title: '组件'
+  path: '/prop',
+  component: prop,
+  name:"prop",
+  title: '参数'
 },
 {
   id:3,
