@@ -9,7 +9,7 @@ const env = require('./dev');
 
 module.exports = {
     //entry:  path.join(__dirname, '../src/index.js'),
-    entry:  path.join(__dirname, '../src/vuex/counter/app.js'),
+    entry:  path.join(__dirname, '../src/vuex/cart/app.js'),
     mode: 'development',
     devtool: 'eval-source-map',
     output: {

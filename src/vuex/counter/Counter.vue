@@ -6,6 +6,7 @@
     <button @click="incrementIfOdd">Increment if odd</button>
     <button @click="incrementAsync">Increment async</button>
     <button @click="incrementNot">Increment not</button>
+    <button @click="incrementReally">Increment really</button>
     <div>
       <div>Recent History (last 5 entries): {{ recentHistory }}</div>
     </div>
@@ -33,6 +34,10 @@ export default {
     ]),
     incrementNot:async function(){
       await this.$store.dispatch('incrementBy')
+      this.$store.commit('decrement')
+    },
+    incrementReally:function(){
+      this.$store.dispatch('incrementBy')
       this.$store.commit('decrement')
     }
   },
