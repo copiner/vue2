@@ -15,6 +15,7 @@ export default {
   buyProducts (products, cb, errorCb) {
     setTimeout(() => {
       // simulate random checkout failure.
+      console.log(Math.random(), navigator.webdriver);
       (Math.random() > 0.5 || navigator.webdriver)
         ? cb()
         : errorCb()

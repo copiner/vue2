@@ -30,6 +30,7 @@ export default {
     ...mapState({
       checkoutStatus: state => state.cart.checkoutStatus
     }),
+    //其实单竖杠"|"就是转换为2进制之后相加得到的结果
     ...mapGetters('cart', {
       products: 'cartProducts',
       total: 'cartTotalPrice'

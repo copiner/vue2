@@ -34,7 +34,7 @@ const actions = {
   checkout ({ commit, state }, products) {
     const savedCartItems = [...state.items]
     commit('setCheckoutStatus', null)
-    // empty cart
+    //empty cart
     commit('setCartItems', { items: [] })
     shop.buyProducts(
       products,
