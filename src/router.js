@@ -20,6 +20,9 @@ const comments = () => import('./base/vuerouter/comments.vue')
 
 const vx = () => import('./base/vuex/vx.vue')
 
+
+const le = () => import('./base/life/life.vue')
+
 const routes = [
 {
   id:1,
@@ -117,6 +120,14 @@ const routes = [
   props: true,
   name:"vx",
   title: '状态'
+},
+{
+  id:12,
+  path: '/le',
+  component: le,
+  props: true,
+  name:"le",
+  title: '生命'
 },
 
 ]
