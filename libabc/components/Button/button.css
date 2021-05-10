@@ -1,0 +1,87 @@
+
+
+.libabc-btn{
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 30px;
+    height: 32px;
+    border-radius: 4px;
+    outline: none;
+    color:red;
+
+}
+
+.libabc-btn.success{
+  --success: #20d08c;
+
+  color: #fff;
+  border-color: var(--success);
+  background: var(--success);
+  font-weight: 400;
+}
+
+.libabc-btn.error{
+  --error: #e91a1a;
+
+  color: #fff;
+  border-color: var(--error);
+  background: var(--error);
+  font-weight: 400;
+}
+
+
+.libabc-btn.warning{
+  --warning: #ffb200;
+
+  color: #fff;
+  border-color: var(--warning);
+  background: var(--warning);
+  font-weight: 400;
+}
+
+.libabc-btn.info{
+  --info: #005ff1;
+
+  color: #fff;
+  border-color: var(--info);
+  background: var(--info);
+  font-weight: 400;
+}
+
+.libabc-btn.default{
+  --default: #ddd;
+
+  color: #fff;
+  border-color: var(--default);
+  background: var(--default);
+  font-weight: 400;
+}
+
+.libabc-btn.small {
+  padding: 0 5px;
+  font-size: 12px;
+  line-height: 20px;
+  height: 24px;
+}
+.libabc-btn.medium {
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 34px;
+    height: 36px;
+}
+.libabc-btn.large {
+    padding: 0 28px;
+    font-size: 16px;
+    line-height: 38px;
+    height: 40px;
+}
+.libabc-btn.circle {
+    border-radius: 28px;
+}
+.libabc-btn.rectangle {
+    border-radius: 0px;
+}

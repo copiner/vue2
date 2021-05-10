@@ -22,6 +22,8 @@ const vx = () => import('./base/vuex/vx.vue')
 
 
 const le = () => import('./base/life/life.vue')
+const libabc = () => import('./vueabc/index.vue')
+
 
 const routes = [
 {
@@ -129,6 +131,14 @@ const routes = [
   name:"le",
   title: '生命'
 },
+{
+  id:13,
+  path:'/libabc',
+  component: libabc,
+  props: true,
+  name:"libabc",
+  title: '自定义组件'
+}
 
 ]
 

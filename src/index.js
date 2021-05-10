@@ -7,8 +7,12 @@ import VueRouter from 'vue-router'
 import { router } from './router'
 import Vuex from 'vuex'
 
+import LibabcVue from '../libabc'
+
 Vue.use(VueRouter)
 Vue.use(Vuex)
+
+Vue.use(LibabcVue)
 
 //最好提前在你的 store 中初始化好所有所需属性
 // Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、mutation、action、getter、
