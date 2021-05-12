@@ -36,8 +36,8 @@ export default {
         }
     },
     created: function () {
-      console.log(this.$route)
-      console.log(this.$router)
+      //console.log(this.$route)
+      //console.log(this.$router)
     },
 }
 </script>
